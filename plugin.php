@@ -1,112 +1,90 @@
 <?php
 /*
-Plugin Name: Fallback to main website
-Plugin URI: https://newstargeted.com/index.php/misc/yourls/yourls-plugins
-Description: Users can change their url in the plugin file.
-Version: 1.4
-Author: Master3395 <info@newstargeted.com>
-Author URI: https://newstargeted.com/master3395
+Plugin Name: Ultimate Ad Redirect
+Plugin URI: https://github.com/master3395/YOURLS-Ultimate-Ad-Redirect
+Description: Ultimate redirect plugin with customizable ads, countdown timer, and admin settings. Mobile-friendly and SEO-optimized.
+Version: 2.0
+Author: Master3395
+Author URI: https://newstargeted.com/
 */
 
 // No direct call
-if( ! defined( 'YOURLS_ABSPATH' ) ) die();
+if( !defined( 'YOURLS_ABSPATH' ) ) die();
 
-/**
- * Set default password requirements. Default is minimum 6 characters.
- * You may also enable the following:
- * - Require at least one digit
- * - Require at lesat one special character
- * - Require both uppercase and lowercase letters
- * 
- * You can change these options in your config.php file.
- * This example enables everything:
- *
-/**
- * Add hooks required for plugin
- */
-yourls_add_filter( 'logout_link',		'vva_change_password_logout_link' );
+// Include modules for admin functionality
+require_once dirname( __FILE__ ) . '/modules/admin-settings-functions.php';
+require_once dirname( __FILE__ ) . '/modules/admin-form.php';
+require_once dirname( __FILE__ ) . '/modules/admin-docs.php';
+require_once dirname( __FILE__ ) . '/modules/admin-styles.php';
+require_once dirname( __FILE__ ) . '/modules/admin-scripts.php';
+require_once dirname( __FILE__ ) . '/modules/admin-settings.php';
 
-/**
- * Add the change password link next to logout so it makes sense in the UI
- * 
- * @param string $logout_link
- * @return string $logout_link
- */
-function vva_change_password_logout_link ( $logout_link )
-{
-	$admin_pages = yourls_list_plugin_admin_pages();
-	$change_password_url = $admin_pages[ 'change_password' ][ 'url' ];
-	
-	$logout_link = rtrim( $logout_link, ')' );
-	$logout_link .= sprintf( ' | <a href="/">Go to main website.</a>)', $change_password_url );
-	
-	return $logout_link;
+// Hook into redirect process
+yourls_add_action( 'pre_redirect', 'ultimate_ad_redirect_handler' );
+
+// Initialize admin functionality
+yourls_add_action( 'plugins_loaded', 'ultimate_ad_redirect_init' );
+
+function ultimate_ad_redirect_init() {
+    // Register admin page
+    yourls_register_plugin_page( 'ultimate_ad_redirect', 'Ultimate Ad Redirect', 'ultimate_ad_redirect_admin_page' );
 }
 
-/**
- * Remove Redict to main website link from sublist of manage plugins since we're
- * adding it to the logout link
- * 
- * @param array $admin_sublinks
- * @return array $admin_sublinks
- */
+// Main redirect handler function
+function ultimate_ad_redirect_handler( $args ) {
+    $url = $args[0];
+    $code = $args[1];
+    
+    // Get settings from database
+    $settings = ultimate_ad_redirect_get_settings();
+    
+    // Set refresh header
+    header( "refresh:" . $settings['countdown_time'] . ";url=$url" );
+    
+    // Simple countdown page
+    echo $settings['redirect_message'] . " ";
+    
+    echo <<<HTML
+<script type="text/javascript">
+COUNTER_START = {$settings['countdown_time']}
 
-function vva_change_password_admin_sublinks( $admin_sublinks )
-{
-	unset( $admin_sublinks[ 'plugins' ][ 'change_password' ] );
-	
-	return $admin_sublinks;
+function tick () {
+    if (document.getElementById ('counter').firstChild.data > 0) {
+        document.getElementById ('counter').firstChild.data = document.getElementById ('counter').firstChild.data - 1
+        setTimeout ('tick()', 1000)
+    } else {
+        document.getElementById ('counter').firstChild.data = 'done'
+    }
 }
 
-/**
- * Update current user's password in config file
- * 
- * Borrowed heavily from yourls_hash_passwords_now()
- * 
- * @param string $new_password
- * @return boolean
- */
-
-/**
- * Verify YOURLS >= 1.7, passwords are hashed, and config file is writable
- * 
- * @return bool
- */
-function vva_change_password_verify_capabilities()
-{
-	$error = FALSE;
-	
-	if ( version_compare( YOURLS_VERSION, '1.7', 'lt' ) )
-	{
-		$error .= 'Error: This plugin requires YOURLS version 1.7 or greater<br />';
-	}
-	
-	if ( yourls_has_cleartext_passwords() )
-	{
-		$error .= 'Error: This plugin requires stored passwords to be hashed<br />';
-	}
-	
-	if ( ! is_readable( YOURLS_CONFIGFILE ) )
-		
-	{
-		$error .= 'Error: Cannot read config file<br />';
-	}
-		
-	if ( ! is_writable( YOURLS_CONFIGFILE ) )
-	{
-		$error .= 'Error: Cannot write config file<br />';
-	}
-	
-	if ( $error )
-	{
-		echo '<p class="error">' . $error . '</p>';
-		
-		return FALSE;
-	}
-	else
-	{
-		return TRUE;
-	}
+if (document.getElementById) onload = function () {
+    var t = document.createTextNode (COUNTER_START)
+    var p = document.createElement ('P')
+    p.appendChild (t)
+    p.setAttribute ('id', 'counter')
+    
+    var body = document.getElementsByTagName ('BODY')[0]
+    var firstChild = body.getElementsByTagName ('*')[0]
+    
+    body.insertBefore (p, firstChild)
+    tick()
 }
+</script>
 
-// EOF */
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={$settings['adsense_client']}"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="{$settings['adsense_client']}"
+     data-ad-slot="{$settings['adsense_slot']}"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+HTML;
+    
+    // Stop YOURLS from doing normal redirect
+    die();
+}

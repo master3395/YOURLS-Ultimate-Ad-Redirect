@@ -1,0 +1,104 @@
+2025-09-07 15:47:36 - Starting settings update
+2025-09-07 15:47:36 - POST data: Array
+(
+    [ultimate_ad_redirect_settings] => Save Settings
+    [nonce] => 569ebd77fd
+    [countdown_time] => 10
+    [redirect_message] => You'll be redirected in
+    [page_title] => Redirecting...
+    [bg_color] => #1a1a1a
+    [text_color] => #ffffff
+    [adsense_client] => ca-pub-3060717665802203
+    [adsense_slot] => 6872727175
+    [adsense_format] => auto
+    [ga_id] => G-0JMX499BTB
+    [gtm_id] => GTM-NQXMWPT
+    [custom_ad_html] => 
+)
+
+2025-09-07 15:47:36 - Required fields exist, creating settings array
+2025-09-07 15:47:36 - Processing countdown_time
+2025-09-07 15:47:36 - Processing redirect_message
+2025-09-07 15:47:36 - Processing page_title
+2025-09-07 15:47:36 - Processing bg_color
+2025-09-07 15:47:36 - Settings array created, about to validate
+2025-09-07 15:47:36 - About to update option in database
+2025-09-07 15:47:36 - Settings update completed successfully!
+2025-09-07 16:02:16 - Starting settings update
+2025-09-07 16:02:16 - POST data: Array
+(
+    [ultimate_ad_redirect_settings] => Save Settings
+    [nonce] => 569ebd77fd
+    [countdown_time] => 10
+    [redirect_message] => You'll be redirected in
+    [page_title] => Redirecting...
+    [bg_color] => #1a1a1a
+    [text_color] => #ffffff
+    [adsense_client] => ca-pub-3060717665802203
+    [adsense_slot] => 6872727175
+    [adsense_format] => auto
+    [ga_id] => G-0JMX499BTB
+    [gtm_id] => GTM-NQXMWPT
+    [custom_ad_html] => 
+)
+
+2025-09-07 16:02:16 - Required fields exist, creating settings array
+2025-09-07 16:02:16 - Processing countdown_time
+2025-09-07 16:02:16 - Processing redirect_message
+2025-09-07 16:02:16 - Processing page_title
+2025-09-07 16:02:16 - Processing bg_color
+2025-09-07 16:02:16 - Settings array created, about to validate
+2025-09-07 16:02:16 - About to update option in database
+2025-09-07 16:02:16 - Settings update completed successfully!
+2025-09-07 17:12:25 - Starting settings update
+2025-09-07 17:12:25 - POST data: Array
+(
+    [ultimate_ad_redirect_settings] => Save Settings
+    [nonce] => 569ebd77fd
+    [countdown_time] => 15
+    [redirect_message] => You'll be redirected in
+    [page_title] => Redirecting...
+    [bg_color] => #1a1a1a
+    [text_color] => #ffffff
+    [adsense_client] => ca-pub-3060717665802203
+    [adsense_slot] => 6872727175
+    [adsense_format] => auto
+    [ga_id] => G-0JMX499BTB
+    [gtm_id] => GTM-NQXMWPT
+    [custom_ad_html] => 
+)
+
+2025-09-07 17:12:25 - Required fields exist, creating settings array
+2025-09-07 17:12:25 - Processing countdown_time
+2025-09-07 17:12:25 - Processing redirect_message
+2025-09-07 17:12:25 - Processing page_title
+2025-09-07 17:12:25 - Processing bg_color
+2025-09-07 17:12:25 - Settings array created, about to validate
+2025-09-07 17:12:25 - About to update option in database
+2025-09-07 17:12:25 - Settings update completed successfully!
+2025-09-07 17:14:15 - Starting settings update
+2025-09-07 17:14:15 - POST data: Array
+(
+    [ultimate_ad_redirect_settings] => Save Settings
+    [nonce] => 569ebd77fd
+    [countdown_time] => 10
+    [redirect_message] => You'll be redirected in
+    [page_title] => Redirecting...
+    [bg_color] => #1a1a1a
+    [text_color] => #ffffff
+    [adsense_client] => ca-pub-3060717665802203
+    [adsense_slot] => 6872727175
+    [adsense_format] => auto
+    [ga_id] => G-0JMX499BTB
+    [gtm_id] => GTM-NQXMWPT
+    [custom_ad_html] => 
+)
+
+2025-09-07 17:14:15 - Required fields exist, creating settings array
+2025-09-07 17:14:15 - Processing countdown_time
+2025-09-07 17:14:15 - Processing redirect_message
+2025-09-07 17:14:15 - Processing page_title
+2025-09-07 17:14:15 - Processing bg_color
+2025-09-07 17:14:15 - Settings array created, about to validate
+2025-09-07 17:14:15 - About to update option in database
+2025-09-07 17:14:15 - Settings update completed successfully!
