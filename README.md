@@ -1,14 +1,17 @@
 # Ultimate Ad Redirect Plugin for YOURLS
 
+[![Listed in Awesome YOURLS!](https://img.shields.io/badge/Awesome-YOURLS-C5A3BE)](https://github.com/YOURLS/awesome)
+
 **Version:** 2.0  
 **Author:** Master3395  
 **License:** MIT  
 **Repository:** [GitHub - YOURLS-Ultimate-Ad-Redirect](https://github.com/master3395/YOURLS-Ultimate-Ad-Redirect)  
-**Author Website:** [newstargeted.com](https://newstargeted.com/)
+**Author Website:** [newstargeted.com](https://newstargeted.com/)  
+**YOURLS Compatibility:** 1.10.0+ (Tested with YOURLS 1.10.2)
 
 The most advanced and feature-rich redirect plugin for YOURLS with customizable ads, countdown timer, and comprehensive analytics.
 
-## 🚀 Features
+## ?? Features
 
 ### Core Functionality
 - **Smart Redirect Logic**: Only redirects on actual short URL visits, not admin activation
@@ -43,29 +46,37 @@ The most advanced and feature-rich redirect plugin for YOURLS with customizable 
 - **Donation Support**: Support plugin development with PayPal or Stripe
 - **Security Features**: Input validation and sanitization
 
-## 📁 File Structure
+## ?? File Structure
 
 ```
 Ultimate-Ad-Redirect/
-├── plugin.php                 # Main plugin file (40 lines)
-├── modules/
-│   ├── admin-settings.php     # Admin settings and configuration (518 lines)
-│   ├── redirect-handler.php   # Main redirect logic (334 lines)
-│   ├── ad-manager.php         # Advertisement management (153 lines)
-│   └── analytics.php          # Analytics and tracking (200 lines)
-├── logs/
-│   └── redirects.log          # Redirect tracking log
-└── README.md                  # This file
++-- plugin.php                 # Main plugin file (40 lines)
++-- modules/
+�   +-- admin-settings.php     # Admin settings and configuration (518 lines)
+�   +-- redirect-handler.php   # Main redirect logic (334 lines)
+�   +-- ad-manager.php         # Advertisement management (153 lines)
+�   +-- analytics.php          # Analytics and tracking (200 lines)
++-- logs/
+�   +-- redirects.log          # Redirect tracking log
++-- README.md                  # This file
 ```
 
-## 🛠️ Installation
+## ?? Compatibility
+
+- **YOURLS Version:** 1.10.0 and above
+- **PHP Version:** 7.4+ (Recommended: PHP 8.0+)
+- **Web Servers:** Apache, Nginx, OpenLiteSpeed (OLS)
+- **Operating Systems:** Linux, Windows, macOS
+- **Tested With:** YOURLS 1.10.2 on AlmaLinux 9.6 with OpenLiteSpeed
+
+## ?? Installation
 
 1. Upload the plugin folder to `/user/plugins/`
 2. Activate the plugin in your YOURLS admin panel
 3. Configure your settings in the "Ultimate Ad Redirect" admin page
 4. Test with a short URL
 
-## ⚙️ Configuration
+## ?? Configuration
 
 ### Admin Interface
 - **Unified Controls**: Tab navigation and theme toggler in one clean row
@@ -97,7 +108,7 @@ Ultimate-Ad-Redirect/
 ### Custom Ads
 - **Custom HTML**: Add your own custom ad code
 
-## 🔒 Security Features
+## ?? Security Features
 
 - **Input Validation**: All user inputs are validated and sanitized
 - **XSS Protection**: Output is properly escaped
@@ -105,7 +116,7 @@ Ultimate-Ad-Redirect/
 - **SQL Injection Prevention**: Proper data sanitization
 - **File Permission Security**: Logs directory has proper permissions
 
-## 📊 Analytics
+## ?? Analytics
 
 The plugin tracks:
 - Total redirects
@@ -116,7 +127,7 @@ The plugin tracks:
 
 View analytics in the admin panel under "Ultimate Ad Redirect" settings.
 
-## 🎨 Customization
+## ?? Customization
 
 ### Styling
 The redirect page uses modern CSS with:
@@ -134,7 +145,7 @@ The redirect page uses modern CSS with:
 - Keyboard support (Enter/Space to skip)
 - Mobile touch support
 
-## 🐛 Troubleshooting
+## ?? Troubleshooting
 
 ### Plugin Not Working
 1. Check that the plugin is activated
@@ -154,7 +165,7 @@ The redirect page uses modern CSS with:
 3. Ensure the tracking code is loading
 4. Check browser network tab for requests
 
-## 📝 Changelog
+## ?? Changelog
 
 ### Version 2.0
 - Complete rewrite with modular architecture
@@ -172,7 +183,7 @@ The redirect page uses modern CSS with:
 - Simple countdown timer
 - Basic ad display
 
-## 👨‍💻 Author
+## ????? Author
 
 **Master3395**
 - Website: https://newstargeted.com/
@@ -180,11 +191,11 @@ The redirect page uses modern CSS with:
 - Discord: https://discord.gg/nx9Kzrk
 - GitHub: https://github.com/master3395
 
-## 📄 License
+## ?? License
 
 MIT License - Feel free to modify and distribute.
 
-## 🤝 Support
+## ?? Support
 
 For support, feature requests, or bug reports:
 1. Check the troubleshooting section above
