@@ -175,8 +175,9 @@ The redirect page uses modern CSS with:
 ## 👨‍💻 Author
 
 **Master3395**
-- Website: https://newstargeted.com/master3395
+- Website: https://newstargeted.com/
 - Email: info@newstargeted.com
+- Discord: https://discord.gg/nx9Kzrk
 - GitHub: https://github.com/master3395
 
 ## 📄 License
